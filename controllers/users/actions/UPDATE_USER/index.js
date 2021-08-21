@@ -8,7 +8,7 @@ exports.updateUser = async (req, res) => {
 
     try {
         const findEmail = await User.findOne({ email: req.body.email, _id: { $ne: req.params.id } });
-        if(findEmail) return res.status(400).json('"email" has already been registered')
+        if(findEmail) return res.status(400).json('"email" has already been registered to a company')
     
         const user = await User.updateOne({ _id: req.params.id }, req.body);
         res.json(user.nModified !== 0 ? 'User updated!' : 'User not found. Nothing updated');

@@ -8,7 +8,7 @@ exports.createNewUser = async (req, res) => {
 
     try {
         const findEmail = await User.findOne({ email: req.body.email });
-        if(findEmail) return res.status(400).json('"email" has already been registered');
+        if(findEmail) return res.status(400).json('"email" has already been registered to a company');
     
         const user = await User.create(req.body);
         res.json(user);
