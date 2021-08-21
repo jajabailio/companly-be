@@ -13,13 +13,5 @@ module.exports = new mongoose.Schema({
         type: Boolean,
         required: true,
         default: true
-    },
-    ownedBy: {
-        type: String,
-        required: true
-    },
-    // User_id: {
-    //     type: mongoose.SchemaType.ObjectId,
-    //     refs: 'User'
-    // }
+    }
 }, { timestamps: true });
